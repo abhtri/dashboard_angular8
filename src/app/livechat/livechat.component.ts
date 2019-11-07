@@ -13,9 +13,11 @@ export class LivechatComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.greetings= [{"name":"abhdi","description":"df"}];
+    this.showConversation=true;
   }
 
-  public greetings: string[] = [];
+  public greetings= [{"name":"abhdi","description":"df"}];
   public showConversation: boolean = false;
   public ws: any;
   public name= new FormControl(''); 
@@ -58,7 +60,7 @@ export class LivechatComponent implements OnInit {
   showGreeting(message) {
     this.showConversation = true;
     console.log("hello " + message);
-    this.greetings.push(message)
+    this.greetings=JSON.parse(message);
   }
 
   setConnected(connected) {
